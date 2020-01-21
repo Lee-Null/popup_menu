@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:popup_menu/popup_menu.dart';
 import 'package:popup_menu/popup.dart';
 
@@ -97,9 +98,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: (){
                   Popup(
                     context: context,
-                    child: Container(
-                      child: Text('Showed Popup', style: TextStyle(color: Colors.white),)
-                    ), width: 200, height: 100,
+                    child: Text('Showed Popup', style: TextStyle(color: Colors.white),),
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
                     backgroundColor: Colors.black.withOpacity(0.65)
                   ).show(widgetKey: btnKey);
                 },

@@ -117,7 +117,7 @@ class Popup {
                     width: width,
                     height: height,
                     color: decoration != null ? null : backgroundColor,
-                    decoration: decoration ?? decoration.copyWith(color: backgroundColor),
+                    decoration: decoration != null ? decoration.copyWith(color: backgroundColor) : null,
                   )
                 ),
               ),
