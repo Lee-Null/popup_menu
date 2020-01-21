@@ -25,6 +25,7 @@ class Popup {
 
   final Widget child;
   final Color backgroundColor;
+  final BoxDecoration decoration;
   double height, width;
 
   Popup(
@@ -33,6 +34,7 @@ class Popup {
         this.onDismiss,
         this.stateChanged,
         this.backgroundColor: const Color(0xff232323),
+        this.decoration,
         @required this.child,
         @required this.height,
         @required this.width,
@@ -114,7 +116,8 @@ class Popup {
                     child: child,
                     width: width,
                     height: height,
-                    color: backgroundColor,
+                    color: decoration != null ? null : backgroundColor,
+                    decoration: decoration ?? decoration.copyWith(color: backgroundColor),
                   )
                 ),
               ),
