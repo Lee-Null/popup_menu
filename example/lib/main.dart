@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:popup_menu/popup_menu.dart';
-import 'package:popup_menu_example/gesture_demo.dart';
+import 'package:popup_menu/popup.dart';
 
 void main() => runApp(MyApp());
 
@@ -94,7 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
               child: MaterialButton(
                 height: 45.0,
                 key: btnKey,
-                onPressed: maxColumn,
+                onPressed: (){
+                  Popup(
+                    context: context,
+                    child: Container(
+                      child: Text('Showed Popup', style: TextStyle(color: Colors.white),)
+                    ), width: 200, height: 100,
+                    backgroundColor: Colors.black.withOpacity(0.65)
+                  ).show(widgetKey: btnKey);
+                },
                 child: Text('Show Menu'),
               ),
             ),
@@ -120,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('Gestures Demo'),
                 onPressed: onGesturesDemo,
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -134,10 +142,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void onGesturesDemo() {
     menu.dismiss();
     return;
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => GestureDemo()),
-    );
   }
 
   void checkState(BuildContext context) {

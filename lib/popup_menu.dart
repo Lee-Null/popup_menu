@@ -15,9 +15,9 @@ abstract class MenuItemProvider {
 }
 
 class MenuItem extends MenuItemProvider {
-  Widget image; // 图标名称
-  String title; // 菜单标题
-  var userInfo; // 额外的菜单荐信息
+  Widget image;
+  String title;
+  var userInfo;
   TextStyle textStyle;
   TextAlign textAlign;
 
@@ -188,12 +188,6 @@ class PopupMenu {
         onTap: () {
           dismiss();
         },
-//        onTapDown: (TapDownDetails details) {
-//          dismiss();
-//        },
-        // onPanStart: (DragStartDetails details) {
-        //   dismiss();
-        // },
         onVerticalDragStart: (DragStartDetails details) {
           dismiss();
         },
@@ -244,7 +238,6 @@ class PopupMenu {
     });
   }
 
-  // 创建行
   List<Widget> _createRows() {
     List<Widget> rows = [];
     for (int i = 0; i < _row; i++) {
@@ -265,7 +258,6 @@ class PopupMenu {
     return rows;
   }
 
-  // 创建一行的item,  row 从0开始算
   List<Widget> _createRowItems(int row) {
     List<MenuItemProvider> subItems =
         items.sublist(row * _col, min(row * _col + _col, items.length));
@@ -313,7 +305,6 @@ class PopupMenu {
     }
 
     if (itemCount == 4) {
-      // 4个显示成两行
       return 2;
     }
 
@@ -377,7 +368,6 @@ class PopupMenu {
 
 class _MenuItemWidget extends StatefulWidget {
   final MenuItemProvider item;
-  // 是否要显示右边的分隔线
   final bool showLine;
   final Color lineColor;
   final Color backgroundColor;

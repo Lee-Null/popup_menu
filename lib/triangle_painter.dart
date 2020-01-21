@@ -1,6 +1,5 @@
 import 'package:flutter/rendering.dart';
 
-// 画弹出菜单下面的三角形
 class TrianglePainter extends CustomPainter {
   bool isDown;
   Color color;
