@@ -101,7 +101,7 @@ class Popup {
               // triangle arrow
               Positioned(
                 left: rect.left + rect.width / 2.0 - 7.5,
-                top: _isDown ? offset.dy + height : offset.dy - arrowHeight-1,
+                top: _isDown ? offset.dy + height + 1 : offset.dy - arrowHeight - 1,
                 child: CustomPaint(
                   size: Size(15.0, arrowHeight),
                   painter: TrianglePainter(isDown: _isDown, color: backgroundColor),
